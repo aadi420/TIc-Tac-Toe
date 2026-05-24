@@ -1,0 +1,107 @@
+.players {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.player-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  min-width: 165px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.player-card--active {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+.player-card--winner {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+}
+
+.player-symbol {
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1;
+  min-width: 1.2em;
+  text-align: center;
+}
+
+.player-symbol--x { color: #ef4444; }
+.player-symbol--o { color: #3b82f6; }
+
+.player-card__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
+}
+
+.player-card__name {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-h);
+  cursor: pointer;
+  text-align: left;
+}
+
+.player-card__edit-icon {
+  opacity: 0;
+  font-size: 0.75rem;
+  color: var(--accent);
+  transition: opacity 0.15s;
+}
+
+.player-card__name:hover .player-card__edit-icon {
+  opacity: 1;
+}
+
+.player-card__input {
+  border: none;
+  border-bottom: 2px solid var(--accent);
+  background: transparent;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-h);
+  outline: none;
+  width: 110px;
+}
+
+.player-card__score {
+  font-size: 1.375rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.players__divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.players__vs {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 1px;
+}
+
+.players__draws {
+  font-size: 0.7rem;
+  color: var(--text);
+}

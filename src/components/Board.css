@@ -1,0 +1,59 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 3px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1;
+  cursor: pointer;
+  background: var(--bg);
+  border: none;
+  border-radius: 0;
+  transition: background 0.12s;
+}
+
+/* Classic hash borders — right on col 1 & 2, bottom on row 1 & 2 */
+.cell:not(:nth-child(3n)) {
+  border-right: 3px solid var(--border);
+}
+
+.cell:not(:nth-child(n+7)) {
+  border-bottom: 3px solid var(--border);
+}
+
+.cell:not(:disabled):hover {
+  background: var(--accent-bg);
+}
+
+.cell:disabled {
+  cursor: default;
+}
+
+.cell--x {
+  color: #ef4444;
+  animation: mark-pop 0.15s ease;
+}
+
+.cell--o {
+  color: #3b82f6;
+  animation: mark-pop 0.15s ease;
+}
+
+@keyframes mark-pop {
+  from { transform: scale(0.4); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+.cell--win {
+  background: var(--accent-bg) !important;
+}
