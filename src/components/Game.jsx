@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react'
 import Board from './Board.jsx'
-import Players from './Players.jsx'
+import Players from './players.jsx'
 import './Game.css'
 
 /**
